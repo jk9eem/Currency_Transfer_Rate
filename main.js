@@ -6,3 +6,4 @@
 // 6. the amount is exchanged based on the item rate that selected from the list
 // 7. put the currency name
 // 8. works top to bottom and vise versa
+
