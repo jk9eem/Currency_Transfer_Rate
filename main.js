@@ -52,3 +52,11 @@ document.querySelectorAll("#to-currency a").forEach((menu) => menu.addEventListe
     toCurrency = this.textContent;
     console.log("current currency is", toCurrency);
 }));
+
+// 1. When the user input the value
+// 2. it immediately exchange the value
+// 3. and show the value at the same time
+
+function convert(){
+    console.log("key up event occurred");
+}

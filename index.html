@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    
     <div class="exchange-box">
       <div class="dropdown">
         <button class="dropbtn" id="from-button">Get Currency</button>
@@ -21,7 +20,9 @@
 
       <div>
         <div class="input-area">
-          <input type="number" />
+          <input type="number" id="from-input" onkeyup="convert()" />
+          <!--There are two different ways to assign event. 1.addEventListener 2.onkeyup-->
+          <!--onkeyup="convert()" => when the keyup, call convert()-->
           <div>dollar</div>
         </div>
       </div>
@@ -30,22 +31,22 @@
     <!-- duplicate the box-->
     <h1>exchange to</h1>
     <div class="exchange-box">
-        <div class="dropdown">
-          <button class="dropbtn" id="to-button">Get Currency</button>
-          <div class="dropdown-content" id="to-currency">
-            <a href="#">USD</a>
-            <a href="#">GBP</a>
-            <a href="#">EUR</a>
-          </div>
-        </div>
-  
-        <div>
-          <div class="input-area">
-            <input type="number" />
-            <div>dollar</div>
-          </div>
+      <div class="dropdown">
+        <button class="dropbtn" id="to-button">Get Currency</button>
+        <div class="dropdown-content" id="to-currency">
+          <a href="#">USD</a>
+          <a href="#">GBP</a>
+          <a href="#">EUR</a>
         </div>
       </div>
+
+      <div>
+        <div class="input-area">
+          <input type="number" id="to-input" />
+          <div>dollar</div>
+        </div>
+      </div>
+    </div>
 
     <script src="main.js"></script>
   </body>
