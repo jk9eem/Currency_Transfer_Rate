@@ -58,5 +58,7 @@ document.querySelectorAll("#to-currency a").forEach((menu) => menu.addEventListe
 // 3. and show the value at the same time
 
 function convert(){
-    console.log("key up event occurred");
+    // exchange = value * currency
+    let amount = document.getElementById("from-input").value;
+    console.log("The amount is",amount);
 }
