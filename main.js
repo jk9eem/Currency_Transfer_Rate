@@ -40,7 +40,7 @@ document.querySelectorAll("#from-currency a").forEach((menu) => menu.addEventLis
     document.getElementById("from-button").textContent=this.textContent;
     //3. store selected currency rate value to the variable
     fromCurrency = this.textContent;
-    console.log("current currency is", fromCurrency);
+    convert();
 }));
 
 // button action -> click event (for to currency)
@@ -50,7 +50,7 @@ document.querySelectorAll("#to-currency a").forEach((menu) => menu.addEventListe
     document.getElementById("to-button").textContent=this.textContent;
     //3. store selected currency rate value to the variable
     toCurrency = this.textContent;
-    console.log("current currency is", toCurrency);
+    convert();
 }));
 
 // 1. When the user input the value
@@ -63,3 +63,7 @@ function convert(){
     let convertedAmt = amount * currencyRatio[fromCurrency][toCurrency];
     document.getElementById("to-input").value = convertedAmt;
 }
+
+
+// 1. Whenever the currency in the list is changed,
+// 2. re-do exchange calulation
