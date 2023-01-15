@@ -61,5 +61,5 @@ function convert(){
     // exchange = value * currency
     let amount = document.getElementById("from-input").value;
     let convertedAmt = amount * currencyRatio[fromCurrency][toCurrency];
-    console.log("exchange result!: ",convertedAmt);
+    document.getElementById("to-input").value = convertedAmt;
 }
