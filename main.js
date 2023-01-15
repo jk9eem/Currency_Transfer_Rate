@@ -60,5 +60,6 @@ document.querySelectorAll("#to-currency a").forEach((menu) => menu.addEventListe
 function convert(){
     // exchange = value * currency
     let amount = document.getElementById("from-input").value;
-    console.log("The amount is",amount);
+    let convertedAmt = amount * currencyRatio[fromCurrency][toCurrency];
+    console.log("exchange result!: ",convertedAmt);
 }
