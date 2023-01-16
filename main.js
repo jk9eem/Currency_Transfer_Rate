@@ -32,6 +32,8 @@ let currencyRatio = {
 
 let fromCurrency = 'USD';
 let toCurrency = 'USD';
+let toButton = document.getElementById("to-button");
+let fromButton = document.getElementById("from-button");
 
 // button action -> click event (for from currency)
 document.querySelectorAll("#from-currency a").forEach((menu) => menu.addEventListener("click", function(){
