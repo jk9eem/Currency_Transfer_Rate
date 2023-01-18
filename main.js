@@ -69,3 +69,16 @@ function convert(){
 
 // 1. Whenever the currency in the list is changed,
 // 2. re-do exchange calulation
+
+function readNum(num){
+    let resultString = "";
+    let resultArray = [];
+    for (let i = 0; i < unitWords.length; i++) {
+        let unitResult =
+          (num % Math.pow(splitUnit, i + 1)) / Math.pow(splitUnit, i);
+        unitResult = Math.floor(unitResult);
+        if (unitResult > 0) {
+          resultArray[i] = unitResult;
+        }
+      }
+}
