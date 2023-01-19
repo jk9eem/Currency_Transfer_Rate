@@ -30,55 +30,63 @@ let currencyRatio = {
   },
 };
 
-let fromCurrency = 'USD';
-let toCurrency = 'USD';
+let fromCurrency = "USD";
+let toCurrency = "USD";
 let toButton = document.getElementById("to-button");
 let fromButton = document.getElementById("from-button");
 
 // button action -> click event (for from currency)
-document.querySelectorAll("#from-currency a").forEach((menu) => menu.addEventListener("click", function(){
+document.querySelectorAll("#from-currency a").forEach((menu) =>
+  menu.addEventListener("click", function () {
     //1. get button
     //2. change button value
-    document.getElementById("from-button").textContent=this.textContent;
+    document.getElementById("from-button").textContent = this.textContent;
     //3. store selected currency rate value to the variable
     fromCurrency = this.textContent;
     convert();
-}));
+  })
+);
 
 // button action -> click event (for to currency)
-document.querySelectorAll("#to-currency a").forEach((menu) => menu.addEventListener("click", function(){
+document.querySelectorAll("#to-currency a").forEach((menu) =>
+  menu.addEventListener("click", function () {
     //1. get button
     //2. change button value
-    document.getElementById("to-button").textContent=this.textContent;
+    document.getElementById("to-button").textContent = this.textContent;
     //3. store selected currency rate value to the variable
     toCurrency = this.textContent;
     convert();
-}));
+  })
+);
 
 // 1. When the user input the value
 // 2. it immediately exchange the value
 // 3. and show the value at the same time
 
-function convert(){
-    // exchange = value * currency
-    let amount = document.getElementById("from-input").value;
-    let convertedAmt = amount * currencyRatio[fromCurrency][toCurrency];
-    document.getElementById("to-input").value = convertedAmt;
+function convert() {
+  // exchange = value * currency
+  let amount = document.getElementById("from-input").value;
+  let convertedAmt = amount * currencyRatio[fromCurrency][toCurrency];
+  document.getElementById("to-input").value = convertedAmt;
 }
-
 
 // 1. Whenever the currency in the list is changed,
 // 2. re-do exchange calulation
 
-function readNum(num){
-    let resultString = "";
-    let resultArray = [];
-    for (let i = 0; i < unitWords.length; i++) {
-        let unitResult =
-          (num % Math.pow(splitUnit, i + 1)) / Math.pow(splitUnit, i);
-        unitResult = Math.floor(unitResult);
-        if (unitResult > 0) {
-          resultArray[i] = unitResult;
-        }
-      }
+function readNum(num) {
+  let resultString = "";
+  let resultArray = [];
+  for (let i = 0; i < unitWords.length; i++) {
+    let unitResult =
+      (num % Math.pow(splitUnit, i + 1)) / Math.pow(splitUnit, i);
+    unitResult = Math.floor(unitResult);
+    if (unitResult > 0) {
+      resultArray[i] = unitResult;
+    }
+  }
+  for (let i = 0; i < resultArray.length; i++) {
+    if (!resultArray[i]) continue;
+    resultString = String(resultArray[i]) + unitWords[i] + resultString;
+  }
+  return resultString;
 }
